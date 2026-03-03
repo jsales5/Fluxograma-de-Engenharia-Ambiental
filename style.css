@@ -1,8 +1,7 @@
 body {
     background-color: #0d1117;
     color: #c9d1d9;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
-    margin: 0;
+    font-family: -apple-system, system-ui, sans-serif;
     padding: 20px;
 }
 
@@ -16,60 +15,59 @@ header { text-align: center; margin-bottom: 25px; }
 }
 
 .semestre {
-    min-width: 270px;
+    min-width: 300px;
     background-color: #161b22;
     border: 1px solid #30363d;
     border-radius: 8px;
-    padding: 10px;
+    padding: 12px;
     flex-shrink: 0;
 }
 
 h2 {
     color: #58a6ff;
-    font-size: 1rem;
+    font-size: 1.1rem;
     text-align: center;
     border-bottom: 1px solid #30363d;
     padding-bottom: 10px;
-    margin-top: 5px;
 }
 
 .materia {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px;
-    margin: 8px 0;
+    padding: 12px;
+    margin: 10px 0;
     border-radius: 6px;
-    font-size: 0.7rem;
+    font-size: 0.65rem;
     font-weight: bold;
     color: #000;
-    transition: opacity 0.3s, filter 0.3s;
+    transition: 0.3s;
 }
 
-/* Paleta de Cores */
-.vermelho { background-color: #ff5555; }
-.laranja { background-color: #ffaa00; }
-.amarelo { background-color: #f1c40f; }
-.azul { background-color: #3498db; }
-.verde { background-color: #2ecc71; }
-.roxo { background-color: #9b59b6; }
-.branco { background-color: #ffffff; }
+/* Cores por Categoria */
+.vermelho { background-color: #ff5555; } /* Matemática/Física */
+.laranja { background-color: #ffaa00; } /* Mecânica/Energia */
+.amarelo { background-color: #f1c40f; } /* Laboratórios */
+.azul { background-color: #3498db; }    /* Geotecnia/Água */
+.verde { background-color: #2ecc71; }   /* Biológicas/Ambiental */
+.roxo { background-color: #9b59b6; }    /* Projetos/Estágio */
+.branco { background-color: #ffffff; }  /* Humanas/Desenho */
 
-/* Estados Visuais */
+/* Efeitos de Interação */
 .concluida {
-    opacity: 0.3 !important;
-    filter: grayscale(0.8);
+    opacity: 0.25 !important;
+    filter: grayscale(0.9);
     text-decoration: line-through;
 }
 
 .materia:has(input:disabled) {
-    opacity: 0.15;
+    opacity: 0.1;
     filter: grayscale(1);
     cursor: not-allowed;
 }
 
 input[type="checkbox"] {
-    width: 18px;
-    height: 18px;
+    width: 20px;
+    height: 20px;
     cursor: pointer;
 }
