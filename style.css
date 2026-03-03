@@ -1,9 +1,50 @@
-body { background-color: #0d1117; color: #c9d1d9; font-family: sans-serif; margin: 0; padding: 20px; }
+body {
+    background-color: #0d1117;
+    color: #c9d1d9;
+    font-family: -apple-system, sans-serif;
+    margin: 0;
+    padding: 20px;
+}
+
 header { text-align: center; margin-bottom: 20px; }
-#grade-container { display: flex; gap: 15px; overflow-x: auto; padding-bottom: 30px; }
-.semestre { min-width: 260px; background: #161b22; border: 1px solid #30363d; border-radius: 8px; padding: 10px; flex-shrink: 0; }
-h2 { color: #58a6ff; font-size: 0.9rem; text-align: center; border-bottom: 1px solid #30363d; padding-bottom: 10px; }
-.materia { display: flex; justify-content: space-between; align-items: center; padding: 10px; margin: 8px 0; border-radius: 6px; font-size: 0.65rem; font-weight: bold; color: #000; }
+
+#grade-container {
+    display: flex;
+    gap: 15px;
+    overflow-x: auto;
+    padding-bottom: 30px;
+}
+
+.semestre {
+    min-width: 270px;
+    background-color: #161b22;
+    border: 1px solid #30363d;
+    border-radius: 8px;
+    padding: 10px;
+    flex-shrink: 0;
+}
+
+h2 {
+    color: #58a6ff;
+    font-size: 0.95rem;
+    text-align: center;
+    border-bottom: 1px solid #30363d;
+    padding-bottom: 10px;
+}
+
+.materia {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    margin: 8px 0;
+    border-radius: 6px;
+    font-size: 0.68rem;
+    font-weight: bold;
+    color: #000;
+}
+
+/* Cores do Fluxo Ambiental */
 .vermelho { background-color: #ff5555; }
 .laranja { background-color: #ffaa00; }
 .amarelo { background-color: #f1c40f; }
@@ -11,6 +52,19 @@ h2 { color: #58a6ff; font-size: 0.9rem; text-align: center; border-bottom: 1px s
 .verde { background-color: #2ecc71; }
 .roxo { background-color: #9b59b6; }
 .branco { background-color: #ffffff; }
-.concluida { opacity: 0.2; filter: grayscale(1); text-decoration: line-through; }
-input[type="checkbox"] { width: 16px; height: 16px; cursor: pointer; }
-input:disabled { opacity: 0.1; }
+
+.concluida {
+    opacity: 0.2;
+    filter: grayscale(1);
+    text-decoration: line-through;
+}
+
+input[type="checkbox"] {
+    width: 17px;
+    height: 17px;
+    cursor: pointer;
+}
+
+input:disabled {
+    opacity: 0.1;
+}
