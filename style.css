@@ -1,21 +1,55 @@
-body { background-color: #121212; color: #e2e8f0; font-family: 'Segoe UI', sans-serif; padding: 20px; }
-#grade-container { display: flex; gap: 15px; overflow-x: auto; padding-bottom: 30px; }
-.semestre { min-width: 240px; background: #1e1e1e; padding: 12px; border-radius: 10px; border: 1px solid #333; }
-h2 { font-size: 1rem; color: #60a5fa; text-align: center; border-bottom: 1px solid #333; padding-bottom: 5px; }
+const dependencias = {
+    // 1 -> 2
+    'CEL0088': ['ECL0033'],
+    'IFD0171': ['IFD0175'],
+    'IFD0173': ['IFD0177'],
+    'MAT0025': ['MAT0026'],
+    // 2 -> 3
+    'MAT0026': ['MAT0027', 'ENC0035'],
+    'IFD0175': ['ENC0035'],
+    'IGD0173': ['ENC0241', 'ENC0240'],
+    'IQD0125': ['ENC0268'],
+    // 3 -> 4
+    'MAT0027': ['ENC0275'],
+    'ENC0035': ['ENC0037'],
+    'ENC0241': ['ENC0235'],
+    'ENC0268': ['ENC0037'],
+    'ENC0263': ['ENC0269'], 
+    'IQD0125': ['ENC0272', 'ENC0273'],
+    // 4 -> 5
+    'ENC0235': ['ENC0183'],
+    'ENC0037': ['ENC0251', 'ENC0252'],
+    // 5 -> 6
+    'ENC0251': ['ENC0166', 'ENC0001'],
+    // 6 -> 7
+    'ENC0166': ['ENC0004', 'ENC0007', 'ENC0010', 'ENC0052'],
+    // 7 -> 8
+    'ENC0007': ['ENC0015'],
+    'ENC0052': ['ENC0016'],
+    // 9 -> 10
+    'ENC0028': ['ENC0030'],
+    'ENC0026': ['ENC0031']
+};
 
-.materia { 
-    padding: 10px; margin: 8px 0; border-radius: 6px; color: #000; 
-    font-size: 0.75rem; font-weight: bold; display: flex; justify-content: space-between; align-items: center;
-}
+document.querySelectorAll('input[type="checkbox"]').forEach(check => {
+    check.addEventListener('change', function() {
+        const materiaId = this.parentElement.id;
+        const liberados = dependencias[materiaId];
 
-/* Legenda Ambiental */
-.base { background-color: #f87171; }        /* Vermelho: Cálculo/Física */
-.laranja { background-color: #fb923c; }     /* Laranja: Eng/Desenho */
-.experimental { background-color: #fbbf24; } /* Amarelo: Lab/Exp */
-.azul { background-color: #60a5fa; }        /* Azul: Geologia/Hidro */
-.verde { background-color: #4ade80; }       /* Verde: Biologia/Química */
-.cinza { background-color: #94a3b8; }       /* Cinza: Humanas/Gestão */
-.roxo { background-color: #a78bfa; }        /* Roxo: Estágio/Projeto */
+        this.parentElement.classList.toggle('concluida', this.checked);
 
-.concluida { opacity: 0.3; filter: grayscale(1); text-decoration: line-through; }
-input { cursor: pointer; transform: scale(1.2); }
+        if (liberados) {
+            liberados.forEach(id => {
+                const el = document.querySelector(`#${id} input`);
+                if (el) {
+                    el.disabled = !this.checked;
+                    if (!this.checked) {
+                        el.checked = false;
+                        el.parentElement.classList.remove('concluida');
+                        el.dispatchEvent(new Event('change'));
+                    }
+                }
+            });
+        }
+    });
+});
