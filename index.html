@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fluxo Engenharia Ambiental</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Fluxograma Engenharia Ambiental</h1>
+        <p>Marque as matérias para liberar os próximos níveis.</p>
+    </header>
+
+    <main id="grade-container">
+        <div class="semestre">
+            <h2>1º Nível</h2>
+            <div class="materia base" id="MAT0025">Cálculo 1 <input type="checkbox"></div>
+            <div class="materia base" id="IFD0171">Física 1 <input type="checkbox"></div>
+            <div class="materia experimental" id="IFD0173">Física 1 Exp. <input type="checkbox"></div>
+            <div class="materia geologia" id="IGD0173">Geologia Básica <input type="checkbox"></div>
+            <div class="materia quimica" id="IQD0125">Química Geral <input type="checkbox"></div>
+        </div>
+
+        <div class="semestre">
+            <h2>2º Nível</h2>
+            <div class="materia base" id="MAT0026">Cálculo 2 <input type="checkbox" disabled></div>
+            <div class="materia base" id="IFD0175">Física 2 <input type="checkbox" disabled></div>
+            <div class="materia experimental" id="IFD0177">Física 2 Exp. <input type="checkbox" disabled></div>
+            <div class="materia base" id="MAT0031">Introdução à Álgebra Linear <input type="checkbox"></div>
+            <div class="materia engenharia" id="ENC0053">Desenho Técnico <input type="checkbox"></div>
+        </div>
+
+        <div class="semestre">
+            <h2>3º Nível</h2>
+            <div class="materia base" id="MAT0027">Cálculo 3 <input type="checkbox" disabled></div>
+            <div class="materia engenharia" id="ENC0035">Introdução à Mecânica dos Sólidos <input type="checkbox" disabled></div>
+            <div class="materia geologia" id="ENC0241">Geotecnia 1 <input type="checkbox" disabled></div>
+            <div class="materia quimica" id="ENC0268">Ciência dos Materiais <input type="checkbox" disabled></div>
+        </div>
+
+        <div class="semestre">
+            <h2>4º Nível</h2>
+            <div class="materia base" id="ENC0037">Transf. Energia e Massa <input type="checkbox" disabled></div>
+            <div class="materia geologia" id="ENC0235">Geotecnia 2 <input type="checkbox" disabled></div>
+            <div class="materia quimica" id="ENC0269">Microbiologia Ambiental <input type="checkbox" disabled></div>
+        </div>
+
+        <div class="semestre">
+            <h2>9º Nível</h2>
+            <div class="materia verde" id="ENC0026">Aval. Impactos e Riscos <input type="checkbox" disabled></div>
+            <div class="materia roxo" id="ENC0028">Projeto Final 1 <input type="checkbox" disabled></div>
+        </div>
+
+        <div class="semestre">
+            <h2>10º Nível</h2>
+            <div class="materia roxo" id="ENC0030">Projeto Final 2 <input type="checkbox" disabled></div>
+            <div class="materia verde" id="ENC0031">Planejamento e Gestão Ambiental <input type="checkbox" disabled></div>
+        </div>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
