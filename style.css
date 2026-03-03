@@ -1,20 +1,21 @@
-body { background-color: #0f172a; color: #f8fafc; font-family: 'Inter', sans-serif; padding: 20px; }
-#grade-container { display: flex; gap: 20px; overflow-x: auto; padding-bottom: 30px; }
-.semestre { min-width: 260px; background: #1e293b; padding: 15px; border-radius: 12px; border: 1px solid #334155; }
-h2 { color: #38bdf8; font-size: 1.1rem; text-align: center; margin-top: 0; }
+body { background-color: #121212; color: #e2e8f0; font-family: 'Segoe UI', sans-serif; padding: 20px; }
+#grade-container { display: flex; gap: 15px; overflow-x: auto; padding-bottom: 30px; }
+.semestre { min-width: 240px; background: #1e1e1e; padding: 12px; border-radius: 10px; border: 1px solid #333; }
+h2 { font-size: 1rem; color: #60a5fa; text-align: center; border-bottom: 1px solid #333; padding-bottom: 5px; }
 
 .materia { 
-    padding: 12px; margin: 10px 0; border-radius: 6px; color: white; 
-    font-size: 0.8rem; font-weight: 600; display: flex; justify-content: space-between; align-items: center;
+    padding: 10px; margin: 8px 0; border-radius: 6px; color: #000; 
+    font-size: 0.75rem; font-weight: bold; display: flex; justify-content: space-between; align-items: center;
 }
 
 /* Legenda Ambiental */
-.base { background-color: #dc2626; }        /* Vermelho: Cálculo/Física */
-.engenharia { background-color: #ea580c; }  /* Laranja: Mecânica/Desenho */
-.experimental { background-color: #eab308; } /* Amarelo: Laboratórios */
-.geologia { background-color: #0284c7; }     /* Azul: Geotecnia/Hidrologia */
-.verde { background-color: #16a34a; }        /* Verde: Biologia/Ambiental */
-.roxo { background-color: #9333ea; }         /* Roxo: Projeto/Estágio */
+.base { background-color: #f87171; }        /* Vermelho: Cálculo/Física */
+.laranja { background-color: #fb923c; }     /* Laranja: Eng/Desenho */
+.experimental { background-color: #fbbf24; } /* Amarelo: Lab/Exp */
+.azul { background-color: #60a5fa; }        /* Azul: Geologia/Hidro */
+.verde { background-color: #4ade80; }       /* Verde: Biologia/Química */
+.cinza { background-color: #94a3b8; }       /* Cinza: Humanas/Gestão */
+.roxo { background-color: #a78bfa; }        /* Roxo: Estágio/Projeto */
 
 .concluida { opacity: 0.3; filter: grayscale(1); text-decoration: line-through; }
-input { width: 18px; height: 18px; cursor: pointer; }
+input { cursor: pointer; transform: scale(1.2); }
