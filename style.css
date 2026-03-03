@@ -1,0 +1,20 @@
+body { background-color: #0f172a; color: #f8fafc; font-family: 'Inter', sans-serif; padding: 20px; }
+#grade-container { display: flex; gap: 20px; overflow-x: auto; padding-bottom: 30px; }
+.semestre { min-width: 260px; background: #1e293b; padding: 15px; border-radius: 12px; border: 1px solid #334155; }
+h2 { color: #38bdf8; font-size: 1.1rem; text-align: center; margin-top: 0; }
+
+.materia { 
+    padding: 12px; margin: 10px 0; border-radius: 6px; color: white; 
+    font-size: 0.8rem; font-weight: 600; display: flex; justify-content: space-between; align-items: center;
+}
+
+/* Legenda Ambiental */
+.base { background-color: #dc2626; }        /* Vermelho: Cálculo/Física */
+.engenharia { background-color: #ea580c; }  /* Laranja: Mecânica/Desenho */
+.experimental { background-color: #eab308; } /* Amarelo: Laboratórios */
+.geologia { background-color: #0284c7; }     /* Azul: Geotecnia/Hidrologia */
+.verde { background-color: #16a34a; }        /* Verde: Biologia/Ambiental */
+.roxo { background-color: #9333ea; }         /* Roxo: Projeto/Estágio */
+
+.concluida { opacity: 0.3; filter: grayscale(1); text-decoration: line-through; }
+input { width: 18px; height: 18px; cursor: pointer; }
