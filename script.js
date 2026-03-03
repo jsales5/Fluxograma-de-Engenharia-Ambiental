@@ -1,71 +1,68 @@
-const dependencias = {
-    // 1º para 2º
-    'CEL0088': ['ECL0033'],
-    'IFD0171': ['IFD0175'],
-    'IFD0173': ['IFD0177'],
-    'MAT0025': ['MAT0026'],
-    'IGD0173': ['ENC0241', 'ENC0240'],
-    'IQD0125': ['ENC0268', 'ENC0272', 'ENC0273'],
+:root {
+    --bg-body: #0d1117;
+    --bg-card: #161b22;
+    --border: #30363d;
+    --text: #c9d1d9;
+}
 
-    // 2º para 3º
-    'MAT0026': ['MAT0027', 'ENC0035'],
-    'IFD0175': ['ENC0035'],
-    'MAT0031': ['ENC0275'],
+body {
+    background-color: var(--bg-body);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+}
 
-    // 3º para 4º
-    'ENC0035': ['ENC0037'],
-    'ENC0268': ['ENC0037'],
-    'ENC0241': ['ENC0235'],
-    'MAT0027': ['ENC0274', 'ENC0275'],
-    'ENC0263': ['ENC0269', 'ENC0270'],
+#grade-container {
+    display: flex;
+    gap: 15px;
+    overflow-x: auto;
+    padding-bottom: 20px;
+}
 
-    // 4º para 5º
-    'ENC0235': ['ENC0183'],
-    'ENC0037': ['ENC0251', 'ENC0252'],
+.semestre {
+    min-width: 280px;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 10px;
+}
 
-    // 5º para 6º
-    'ENC0251': ['ENC0166', 'ENC0001'],
-    'ENC0274': ['ENC0166'],
-    'ENC0275': ['ENC0001'],
+h2 {
+    color: #58a6ff;
+    font-size: 1.1rem;
+    text-align: center;
+    margin-bottom: 15px;
+}
 
-    // 6º para 7º
-    'ENC0166': ['ENC0004', 'ENC0007', 'ENC0010', 'ENC0052'],
-    'ENE0001': ['EPR0068'],
+.materia {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px;
+    margin: 8px 0;
+    border-radius: 6px;
+    font-size: 0.75rem;
+    font-weight: bold;
+    color: #000;
+}
 
-    // 7º para 8º
-    'ENC0004': ['ENC0013'],
-    'ENC0007': ['ENC0015'],
-    'ENC0052': ['ENC0016'],
-    'EPR0059': ['ENC0025'],
+/* Cores do Fluxograma Ambiental */
+.vermelho { background-color: #ff5555; }
+.laranja { background-color: #ffaa00; }
+.amarelo { background-color: #f1c40f; }
+.azul { background-color: #3498db; }
+.verde { background-color: #2ecc71; }
+.cinza { background-color: #95a5a6; }
+.roxo { background-color: #9b59b6; }
 
-    // 8º para 9º
-    'ENC0013': ['ENC0026'],
-    'ENC0025': ['ENC0028'],
+.concluida {
+    opacity: 0.2;
+    text-decoration: line-through;
+    filter: grayscale(1);
+}
 
-    // 9º para 10º
-    'ENC0028': ['ENC0030'],
-    'ENC0026': ['ENC0031']
-};
-
-document.querySelectorAll('input[type="checkbox"]').forEach(check => {
-    check.addEventListener('change', function() {
-        const id = this.parentElement.id;
-        const liberados = dependencias[id];
-        
-        this.parentElement.classList.toggle('concluida', this.checked);
-
-        if (liberados) {
-            liberados.forEach(alvoId => {
-                const alvoInput = document.querySelector(`#${alvoId} input`);
-                if (alvoInput) {
-                    alvoInput.disabled = !this.checked;
-                    if (!this.checked) {
-                        alvoInput.checked = false;
-                        alvoInput.parentElement.classList.remove('concluida');
-                        alvoInput.dispatchEvent(new Event('change'));
-                    }
-                }
-            });
-        }
-    });
-});
+input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+}
