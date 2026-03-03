@@ -1,4 +1,4 @@
-const fluxo = {
+const dependencias = {
     // 1 -> 2
     'CEL0088': ['ECL0033'],
     'IFD0171': ['IFD0175'],
@@ -10,11 +10,12 @@ const fluxo = {
     'IGD0173': ['ENC0241', 'ENC0240'],
     'IQD0125': ['ENC0268'],
     // 3 -> 4
-    'MAT0027': ['ENC0274', 'ENC0275'],
+    'MAT0027': ['ENC0275'],
     'ENC0035': ['ENC0037'],
     'ENC0241': ['ENC0235'],
     'ENC0268': ['ENC0037'],
-    'ENC0269': ['ENC0270'],
+    'ENC0263': ['ENC0269'], 
+    'IQD0125': ['ENC0272', 'ENC0273'],
     // 4 -> 5
     'ENC0235': ['ENC0183'],
     'ENC0037': ['ENC0251', 'ENC0252'],
@@ -33,12 +34,12 @@ const fluxo = {
 document.querySelectorAll('input[type="checkbox"]').forEach(check => {
     check.addEventListener('change', function() {
         const materiaId = this.parentElement.id;
-        const dependentes = fluxo[materiaId];
+        const liberados = dependencias[materiaId];
 
         this.parentElement.classList.toggle('concluida', this.checked);
 
-        if (dependentes) {
-            dependentes.forEach(id => {
+        if (liberados) {
+            liberados.forEach(id => {
                 const el = document.querySelector(`#${id} input`);
                 if (el) {
                     el.disabled = !this.checked;
