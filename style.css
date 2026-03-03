@@ -1,12 +1,12 @@
 body {
     background-color: #0d1117;
     color: #c9d1d9;
-    font-family: -apple-system, sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
     margin: 0;
     padding: 20px;
 }
 
-header { text-align: center; margin-bottom: 20px; }
+header { text-align: center; margin-bottom: 25px; }
 
 #grade-container {
     display: flex;
@@ -26,10 +26,11 @@ header { text-align: center; margin-bottom: 20px; }
 
 h2 {
     color: #58a6ff;
-    font-size: 0.95rem;
+    font-size: 1rem;
     text-align: center;
     border-bottom: 1px solid #30363d;
     padding-bottom: 10px;
+    margin-top: 5px;
 }
 
 .materia {
@@ -39,12 +40,13 @@ h2 {
     padding: 10px;
     margin: 8px 0;
     border-radius: 6px;
-    font-size: 0.68rem;
+    font-size: 0.7rem;
     font-weight: bold;
     color: #000;
+    transition: opacity 0.3s, filter 0.3s;
 }
 
-/* Cores do Fluxo Ambiental */
+/* Paleta de Cores */
 .vermelho { background-color: #ff5555; }
 .laranja { background-color: #ffaa00; }
 .amarelo { background-color: #f1c40f; }
@@ -53,18 +55,21 @@ h2 {
 .roxo { background-color: #9b59b6; }
 .branco { background-color: #ffffff; }
 
+/* Estados Visuais */
 .concluida {
-    opacity: 0.2;
-    filter: grayscale(1);
+    opacity: 0.3 !important;
+    filter: grayscale(0.8);
     text-decoration: line-through;
 }
 
-input[type="checkbox"] {
-    width: 17px;
-    height: 17px;
-    cursor: pointer;
+.materia:has(input:disabled) {
+    opacity: 0.15;
+    filter: grayscale(1);
+    cursor: not-allowed;
 }
 
-input:disabled {
-    opacity: 0.1;
+input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
 }
